@@ -15,6 +15,7 @@ btn.addEventListener("click", function(e){
         let URLimagen=data.message;
 
         foto.setAttribute("src", URLimagen);
+       
     })
 
 })
@@ -26,12 +27,15 @@ let btn1=document.querySelector("#botonGato");
 console.log(fotoGato);
 console.log(btn1);
 
-btn1.addEventListener("click", function(g){
+btn1.addEventListener("click", function(el){
     $.getJSON("https://api.thecatapi.com/v1/images/search", function(data){
-        let obj1=data;
-        let URLimagen=data.message;
-
-        fotoGato.setAttribute("src", URLimagen);
+        
+        //console.log(data)
+        
+        fotoGato.setAttribute("src", data[0].url);
     })
 
 })
+
+
+//https://api.thecatapi.com/v1/images/search
